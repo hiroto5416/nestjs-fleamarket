@@ -20,4 +20,10 @@ export class ItemsService {
     this.items.push(item);
     return item;
   }
+
+  UpdateStatus(id: string): Item {
+    const item = this.findById(id);
+    item.status = 'SOLD_OUT';
+    return item;
+  }
 }
