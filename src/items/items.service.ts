@@ -26,4 +26,8 @@ export class ItemsService {
     item.status = 'SOLD_OUT';
     return item;
   }
+
+  delete(id: string) {
+    this.items = this.items.filter((item) => item.id !== id);
+  }
 }
