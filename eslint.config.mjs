@@ -28,7 +28,17 @@ export default tseslint.config(
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn'
+      '@typescript-eslint/no-unsafe-argument': 'warn',
+      // class-validator のデコレータに対して no-unsafe-call ルールを緩和
+      '@typescript-eslint/no-unsafe-call': 'warn', // error から warn に変更
+    },
+  },
+  // class-validator を使用するファイルに対する特別な設定
+  {
+    files: ['**/*.dto.ts', '**/*dto.ts', '**/*Dto.ts'],
+    rules: {
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
     },
   },
 );
