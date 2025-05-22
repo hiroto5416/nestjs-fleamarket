@@ -14,8 +14,9 @@
     "skipLibCheck": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noImplicitAny": true, // false → true に変更
+    "strictBindCallApply": true, // false → true に変更
+    "noFallthroughCasesInSwitch": false,
+    "strict": true // 追加推奨
   }
 }

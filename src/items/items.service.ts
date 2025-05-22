@@ -28,10 +28,11 @@ export class ItemsService {
     const { name, price, description } = createItemDto;
     return await this.prismaService.item.create({
       data: {
-        name,
-        price,
+        name: name as string,
+        price: price as number,
         description,
         status: ItemStatus.ON_SALE,
+        userId: '',
       },
     });
   }
